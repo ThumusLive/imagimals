@@ -32,4 +32,9 @@ export const data = {
   },
 };
 
-export const getAliases = () => Object.fromEntries(Object.entries(data).map((a) => [a[0], { alias: Object.values(a[1].names), url: a[1].url }]));
+export const getAliases = () => Object.fromEntries(
+    Object.entries(data).map((a) => [
+      a[0],
+      { alias: Object.values(a[1].names), url: a[1].url },
+    ]),
+  );

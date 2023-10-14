@@ -7,7 +7,7 @@
     "start": "node src/main.js",
     "lint": "eslint src/*.js src/**/*.js tools/*.js",
     "commands:launch": "node tools/maj.js",
-    "prettier": "prettier -w * src/*.js src/**/*.js"
+    "prettier": "prettier -w src/*.js src/**/*.js"
   },
   "keywords": [
     "bot",

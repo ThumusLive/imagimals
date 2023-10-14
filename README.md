@@ -1,13 +1,17 @@
 # Imagimals
+
 > Simple bot for sending multiple random images of animals
 > Easily extensible.
 
 ## What is this bot?
+
 It's a bot aimed to send random images of multiple animals with multi-languages support.
 You can add anything at `src/data/animals.js`.
 
 ## Installation
-You will need: 
+
+You will need:
+
 - [NodeJS](https://nodejs.org)
 - [discord.js](https://discordjs.dev/)
 
@@ -16,16 +20,19 @@ You will need to rename the file `.env.example` to `.env` and then edit it by ad
 
 You'll need to install their node_modules.
 In a terminal in the root folder of the project, type:
+
 ```bash
 npm i
 ```
 
 And then, to launch the bot, do
+
 ```bash
 npm run commands:launch && npm start
 ```
 
 ## Docs
+
 In the future
 
 ## TODO:

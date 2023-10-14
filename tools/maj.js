@@ -16,7 +16,9 @@ for (const obj of Object.entries(animals)) {
   commands.push({
     name: obj[0],
     description: `Send images of ${obj[0]}s.`,
-    description_localizations: Object.fromEntries(Object.entries(names).map((a) => [a[0], languages[a[0]](a[1])])),
+    description_localizations: Object.fromEntries(
+      Object.entries(names).map((a) => [a[0], languages[a[0]](a[1])]),
+    ),
     name_localizations: names,
   });
 }

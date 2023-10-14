@@ -1,3 +1,8 @@
+/**
+ * Save the content of the returned function to avoid multiple calls
+ * @param {Function} func
+ * @returns {string}
+ */
 function cached(func) {
   let i = 0;
   let limit = 1;
@@ -13,13 +18,29 @@ function cached(func) {
   };
 }
 
+/**
+ * Get images object from the website and then return them in a string format
+ * @param {string} url
+ * @returns {string[]}
+ */
 function gets(url) {
   return async () => {
     const req = await fetch(url);
     const body = await req.json();
-    return body instanceof Array
-      ? body.map((a) => a?.image || a?.url || a?.link || a)
-      : [body?.image || body?.url || body?.link || body];
+    const thing = body instanceof Array
+        ? body.map(
+            (a) => a?.image
+              || a?.url
+              || (a?.link && typeof a.link !== "function") // Thanks js
+              || a,
+          )
+        : [
+            body?.image
+              || body?.url
+              || (body?.link && typeof body.link !== "function")
+              || body,
+          ];
+    return thing;
   };
 }
 
